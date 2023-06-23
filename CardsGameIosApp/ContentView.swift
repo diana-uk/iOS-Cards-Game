@@ -13,6 +13,7 @@ struct ContentView: View {
     @State private var playerName: String = ""
     @State private var selectedImage: String? = "red"
     @State private var showRedShadow: Bool = false
+    @State private var isAnimating: Bool = false
     let defaults = UserDefaults.standard
     @StateObject private var locationManager = LocationManager()
 
@@ -20,41 +21,50 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 Text("Welcome to the Card Game")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
+                    .font(.system(size: 36, weight: .bold))
                     .foregroundColor(.white)
-                    .shadow(color: .black, radius: 2, x: 0, y: 0)
                     .padding()
+                    .shadow(color: .black, radius: 2, x: 0, y: 0)
+                
                 HStack {
                     Image("ace_of_spades")
                         .resizable()
-                        .aspectRatio(9/16, contentMode: .fit)
+                        .aspectRatio(contentMode: .fit)
                         .frame(maxWidth: 200)
                         .shadow(color: selectedImage == "green" ? Color.white : Color.clear, radius: 10)
+                        .scaleEffect(isAnimating ? 1.2 : 1.0)
                         .onTapGesture {
                             self.selectedImage = "green"
                             saveUserDefaults()
                         }
+                    
                     Spacer()
+                    
                     VStack {
-                        Text("Pick your color")
-                            .font(.title)
+                        Text("Choose Your Element")
+                            .font(.system(size: 24, weight: .semibold))
                             .foregroundColor(.white)
-                            .shadow(color: .black, radius: 2, x: 0, y: 0)
                             .padding()
+                            .shadow(color: .black, radius: 2, x: 0, y: 0)
+                            .multilineTextAlignment(.center)
+                        
                         Spacer()
+                        
                         Text("User's Longitude: \(locationManager.userLongitude ?? 0)")
-                            .font(.title)
+                            .font(.system(size: 18))
                             .foregroundColor(.white)
                             .shadow(color: .black, radius: 2, x: 0, y: 0)
                             .padding()
                     }
+                    
                     Spacer()
+                    
                     Image("ace_of_hearts")
                         .resizable()
-                        .aspectRatio(9/16, contentMode: .fit)
+                        .aspectRatio(contentMode: .fit)
                         .frame(maxWidth: 200)
                         .shadow(color: selectedImage == "red" ? Color.white : Color.clear, radius: 10)
+                        .scaleEffect(isAnimating ? 1.2 : 1.0)
                         .onTapGesture {
                             self.selectedImage = "red"
                             saveUserDefaults()
@@ -62,10 +72,13 @@ struct ContentView: View {
                 }
                 .padding([.leading, .trailing])
                 
-                TextField("Enter your name", text: $playerName)
-                    .font(.title2)
+                TextField("Enter Your Name", text: $playerName)
+                    .font(.system(size: 20))
                     .padding()
-                    .border(Color.gray, width: 0.5)
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color.gray, lineWidth: 1)
+                    )
                     .shadow(color: showRedShadow ? .red : .clear, radius: 2)
                     .onChange(of: playerName) { newValue in
                         saveUserDefaults()
@@ -73,15 +86,21 @@ struct ContentView: View {
                 
                 NavigationLink(destination: SecondView()) {
                     Text("Start Game")
+                        .font(.system(size: 24, weight: .semibold))
                         .padding()
-                        .background(Color.brown)
-                        .foregroundColor(.black)
-                        .cornerRadius(10)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color.blue)
+                        )
+                        .foregroundColor(.white)
                         .shadow(color: .black, radius: 10, x: 2, y: 0)
                 }
             }
             .padding()
-            .onAppear(perform: loadUserDefaults)
+            .onAppear {
+                loadUserDefaults()
+                startAnimating()
+            }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(
                 Image("background")
@@ -92,6 +111,14 @@ struct ContentView: View {
         }
     }
     
+    private func startAnimating() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            withAnimation {
+                isAnimating = true
+            }
+        }
+    }
+
     func saveUserDefaults() {
         defaults.set(playerName, forKey: "playerName")
         defaults.set(selectedImage, forKey: "selectedImage")
@@ -125,7 +152,7 @@ struct SecondView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("\(playerName.isEmpty ? "Rival" : playerName)")
+                Text("\(playerName.isEmpty ? "PC" : playerName)")
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
@@ -139,7 +166,7 @@ struct SecondView: View {
                     .shadow(color: .black, radius: 2, x: 0, y: 0)
                     .padding()
                 Spacer()
-                Text("\(playerName.isEmpty ? "Rival" : playerName)")
+                Text("\(playerName.isEmpty ? "PC" : playerName)")
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(.white)
@@ -252,7 +279,7 @@ struct SecondView: View {
     func saveUserDefaults() {
         defaults.set(playerName, forKey: "playerName")
         defaults.set(selectedImage, forKey: "selectedImage")
-        defaults.set(player1Points > player2Points ? "Rival" : playerName, forKey: "winnerName")
+        defaults.set(player1Points > player2Points ? "PC" : playerName, forKey: "winnerName")
     }
     
     func loadUserDefaults() {
@@ -327,7 +354,7 @@ struct ThirdView: View {
     }
     
     func loadUserDefaults() {
-        winnerName = defaults.string(forKey: "winnerName") ?? "Rival"
+        winnerName = defaults.string(forKey: "winnerName") ?? "PC"
     }
 }
 
