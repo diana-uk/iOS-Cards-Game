@@ -11,8 +11,8 @@ class Deck {
     var cards = [Card]()
     
     init() {
-        for suit in [Suit.clubs, .diamonds, .hearts, .spades] {
-            for rank in Rank.ace.rawValue...Rank.king.rawValue {
+        for suit in [Suit.green, .blue, .pink, .yellow] {
+            for rank in Rank.watermelon.rawValue...Rank.peach.rawValue {
                 cards.append(Card(suit: suit, rank: Rank(rawValue: rank)!))
             }
         }

@@ -11,9 +11,6 @@
 		C23D59602A46169D00085846 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23D595F2A46169D00085846 /* Deck.swift */; };
 		C23D59622A4616C000085846 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23D59612A4616C000085846 /* Persistence.swift */; };
 		C23D59642A46170400085846 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23D59632A46170400085846 /* ContentView.swift */; };
-		C23D59692A46177200085846 /* PNG-cards-1.3 in Resources */ = {isa = PBXBuildFile; fileRef = C23D59652A46177200085846 /* PNG-cards-1.3 */; };
-		C23D596A2A46177200085846 /* red.png in Resources */ = {isa = PBXBuildFile; fileRef = C23D59662A46177200085846 /* red.png */; };
-		C23D596B2A46177200085846 /* green.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C23D59672A46177200085846 /* green.jpg */; };
 		C23D596E2A4617C100085846 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23D596D2A4617C100085846 /* LocationManager.swift */; };
 		C30205B42A43760500DF1D28 /* CardsGameIosAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30205B32A43760500DF1D28 /* CardsGameIosAppApp.swift */; };
 		C30205B82A43760600DF1D28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C30205B72A43760600DF1D28 /* Assets.xcassets */; };
@@ -21,6 +18,8 @@
 		C30205C52A43760600DF1D28 /* CardsGameIosAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30205C42A43760600DF1D28 /* CardsGameIosAppTests.swift */; };
 		C30205CF2A43760600DF1D28 /* CardsGameIosAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30205CE2A43760600DF1D28 /* CardsGameIosAppUITests.swift */; };
 		C30205D12A43760600DF1D28 /* CardsGameIosAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30205D02A43760600DF1D28 /* CardsGameIosAppUITestsLaunchTests.swift */; };
+		C5682E5C2A47427000446C76 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5682E5B2A47427000446C76 /* GameView.swift */; };
+		C5682E5E2A47430800446C76 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5682E5D2A47430800446C76 /* ResultsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,9 +44,6 @@
 		C23D595F2A46169D00085846 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		C23D59612A4616C000085846 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		C23D59632A46170400085846 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		C23D59652A46177200085846 /* PNG-cards-1.3 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "PNG-cards-1.3"; sourceTree = "<group>"; };
-		C23D59662A46177200085846 /* red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red.png; sourceTree = "<group>"; };
-		C23D59672A46177200085846 /* green.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = green.jpg; sourceTree = "<group>"; };
 		C23D596D2A4617C100085846 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		C30205B02A43760500DF1D28 /* CardsGameIosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardsGameIosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C30205B32A43760500DF1D28 /* CardsGameIosAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsGameIosAppApp.swift; sourceTree = "<group>"; };
@@ -58,6 +54,8 @@
 		C30205CA2A43760600DF1D28 /* CardsGameIosAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CardsGameIosAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C30205CE2A43760600DF1D28 /* CardsGameIosAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsGameIosAppUITests.swift; sourceTree = "<group>"; };
 		C30205D02A43760600DF1D28 /* CardsGameIosAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsGameIosAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C5682E5B2A47427000446C76 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		C5682E5D2A47430800446C76 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,9 +86,6 @@
 		C30205A72A43760500DF1D28 = {
 			isa = PBXGroup;
 			children = (
-				C23D59672A46177200085846 /* green.jpg */,
-				C23D59652A46177200085846 /* PNG-cards-1.3 */,
-				C23D59662A46177200085846 /* red.png */,
 				C30205B22A43760500DF1D28 /* CardsGameIosApp */,
 				C30205C32A43760600DF1D28 /* CardsGameIosAppTests */,
 				C30205CD2A43760600DF1D28 /* CardsGameIosAppUITests */,
@@ -119,6 +114,8 @@
 				C23D59612A4616C000085846 /* Persistence.swift */,
 				C23D59632A46170400085846 /* ContentView.swift */,
 				C23D596D2A4617C100085846 /* LocationManager.swift */,
+				C5682E5B2A47427000446C76 /* GameView.swift */,
+				C5682E5D2A47430800446C76 /* ResultsView.swift */,
 			);
 			path = CardsGameIosApp;
 			sourceTree = "<group>";
@@ -252,9 +249,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C23D59692A46177200085846 /* PNG-cards-1.3 in Resources */,
-				C23D596A2A46177200085846 /* red.png in Resources */,
-				C23D596B2A46177200085846 /* green.jpg in Resources */,
 				C30205BB2A43760600DF1D28 /* Preview Assets.xcassets in Resources */,
 				C30205B82A43760600DF1D28 /* Assets.xcassets in Resources */,
 			);
@@ -282,11 +276,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C23D59602A46169D00085846 /* Deck.swift in Sources */,
+				C5682E5E2A47430800446C76 /* ResultsView.swift in Sources */,
 				C23D59642A46170400085846 /* ContentView.swift in Sources */,
 				C23D596E2A4617C100085846 /* LocationManager.swift in Sources */,
 				C23D59622A4616C000085846 /* Persistence.swift in Sources */,
 				C30205B42A43760500DF1D28 /* CardsGameIosAppApp.swift in Sources */,
 				C23D595E2A46166100085846 /* Card.swift in Sources */,
+				C5682E5C2A47427000446C76 /* GameView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,7 +443,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CardsGameIosApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CardsGameIosApp/Info.plist;
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs location for collecting data of the user";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -477,7 +473,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CardsGameIosApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CardsGameIosApp/Info.plist;
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs location for collecting data of the user";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

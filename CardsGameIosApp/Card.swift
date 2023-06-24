@@ -8,25 +8,25 @@
 import Foundation
 
 enum Suit: String {
-    case clubs, diamonds, hearts, spades
+    case green, blue, pink, yellow
 }
 
 
 enum Rank: Int {
-    case ace = 1
-        case two=2, three=3, four=4, five=5, six=6, seven=7, eight=8, nine=9, ten=10
-        case jack=11, queen=12, king=13
+    case watermelon = 1
+        case cherry=2, lemon=3, orange=4, banana=5, strawberry=6, ananas=7, kiwi=8, litchi=9, persimmon=10
+        case pear=11, grapes=12, peach=13
 
         var description: String {
             switch self {
-            case .ace:
-                return "ace"
-            case .jack:
-                return "jack"
-            case .queen:
-                return "queen"
-            case .king:
-                return "king"
+            case .watermelon:
+                return "watermelon"
+            case .pear:
+                return "pear"
+            case .grapes:
+                return "grapes"
+            case .peach:
+                return "peach"
             default:
                 return "\(rawValue)"
             }
