@@ -25,6 +25,12 @@ struct ContentView: View {
                     .foregroundColor(.white)
                     .padding()
                     .shadow(color: .black, radius: 2, x: 0, y: 0)
+                Text("Choose Your Color")
+                       .font(.system(size: 24, weight: .semibold))
+                       .foregroundColor(.white)
+                       .padding()
+                       .shadow(color: .black, radius: 2, x: 0, y: 0)
+                       .multilineTextAlignment(.center)
                 
                 HStack {
                     Image("ace_of_spades")
@@ -41,20 +47,18 @@ struct ContentView: View {
                     Spacer()
                     
                     VStack {
-                        Text("Choose Your Element")
-                            .font(.system(size: 24, weight: .semibold))
-                            .foregroundColor(.white)
-                            .padding()
-                            .shadow(color: .black, radius: 2, x: 0, y: 0)
-                            .multilineTextAlignment(.center)
                         
-                        Spacer()
-                        
-                        Text("User's Longitude: \(locationManager.userLongitude ?? 0)")
-                            .font(.system(size: 18))
-                            .foregroundColor(.white)
-                            .shadow(color: .black, radius: 2, x: 0, y: 0)
-                            .padding()
+                          Text("User's Longitude")
+                               .font(.system(size: 18, weight: .bold))
+                               .foregroundColor(.white)
+                               .shadow(color: .black, radius: 2, x: 0, y: 0)
+                               .padding(.bottom, 8)
+                           
+                           Text("\(locationManager.userLongitude ?? 0)")
+                               .font(.system(size: 24, weight: .semibold))
+                               .foregroundColor(.white)
+                               .shadow(color: .black, radius: 2, x: 0, y: 0)
+                               .padding(.bottom, 16)
                     }
                     
                     Spacer()
@@ -151,27 +155,28 @@ struct SecondView: View {
     
     var body: some View {
         VStack {
-            HStack {
-                Text("\(playerName.isEmpty ? "PC" : playerName)")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .shadow(color: .black, radius: 2, x: 0, y: 0)
-                    .padding()
+            HStack{
+                Text("\(self.selectedImage != "red" ? playerName : "PC")")
+                .font(.title)
+                .fontWeight(.bold)
+                .foregroundColor(.white)
+                .shadow(color: .black, radius: 2, x: 0, y: 0)
+                .padding()
                 Spacer()
                 Text("\(isWar ? "War!" : "")")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .shadow(color: .black, radius: 2, x: 0, y: 0)
-                    .padding()
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .foregroundColor(.white)
+                .shadow(color: .black, radius: 2, x: 0, y: 0)
+                .padding()
                 Spacer()
-                Text("\(playerName.isEmpty ? "PC" : playerName)")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .shadow(color: .black, radius: 2, x: 0, y: 0)
-                    .padding()
+                Text("\(self.selectedImage == "red" ? playerName : "PC")")
+                .font(.title)
+                .fontWeight(.bold)
+                .foregroundColor(.white)
+                .shadow(color: .black, radius: 2, x: 0, y: 0)
+                .padding()
+                
             }
             HStack {
                 Text("Points: \(player1Points)")
@@ -205,12 +210,15 @@ struct SecondView: View {
             if rounds > 10 {
                 NavigationLink(destination: ThirdView()) {
                     Text("Next")
+                        .font(.system(size: 24, weight: .semibold))
                         .padding()
-                        .background(Color.brown)
-                        .foregroundColor(.black)
-                        .cornerRadius(10)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color.blue)
+                        )
+                        .foregroundColor(.white)
                         .shadow(color: .black, radius: 10, x: 2, y: 0)
-                }
+                    }
             }
         }
         .padding()
@@ -317,6 +325,7 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
 struct ThirdView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var winnerName: String = ""

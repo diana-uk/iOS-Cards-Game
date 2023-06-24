@@ -2,7 +2,7 @@
 //  Card.swift
 //  WarGame
 //
-//  Created by [Your Name] on [Current Date].
+//  Created by Student15 on 04/06/2023.
 //
 
 import Foundation
@@ -11,25 +11,29 @@ enum Suit: String {
     case clubs, diamonds, hearts, spades
 }
 
-enum Rank: Int {
-    case ace = 1, two, three, four, five, six, seven, eight, nine, ten
-    case jack, queen, king
 
-    var description: String {
-        switch self {
-        case .ace:
-            return "Ace"
-        case .jack:
-            return "Jack"
-        case .queen:
-            return "Queen"
-        case .king:
-            return "King"
-        default:
-            return "\(rawValue)"
+enum Rank: Int {
+    case ace = 1
+        case two=2, three=3, four=4, five=5, six=6, seven=7, eight=8, nine=9, ten=10
+        case jack=11, queen=12, king=13
+
+        var description: String {
+            switch self {
+            case .ace:
+                return "ace"
+            case .jack:
+                return "jack"
+            case .queen:
+                return "queen"
+            case .king:
+                return "king"
+            default:
+                return "\(rawValue)"
+            }
         }
-    }
+    
 }
+
 
 class Card {
     var suit: Suit
@@ -41,6 +45,6 @@ class Card {
     }
     
     var description: String {
-        return "\(rank.description) of \(suit.rawValue.capitalized)"
+        return "\(rank) of \(suit)"
     }
 }
