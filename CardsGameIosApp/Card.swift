@@ -21,6 +21,24 @@ enum Rank: Int {
             switch self {
             case .watermelon:
                 return "watermelon"
+            case .cherry:
+                return "cherry"
+            case .lemon:
+                return "lemon"
+            case .orange:
+                return "orange"
+            case .banana:
+                return "banana"
+            case .strawberry:
+                return "strawberry"
+            case .ananas:
+                return "ananas"
+            case .kiwi:
+                return "kiwi"
+            case .litchi:
+                return "litchi"
+            case .persimmon:
+                return "persimmon"
             case .pear:
                 return "pear"
             case .grapes:
@@ -28,7 +46,7 @@ enum Rank: Int {
             case .peach:
                 return "peach"
             default:
-                return "\(rawValue)"
+                return ""
             }
         }
     
@@ -42,9 +60,5 @@ class Card {
     init(suit: Suit, rank: Rank) {
         self.suit = suit
         self.rank = rank
-    }
-    
-    var description: String {
-        return "\(rank) of \(suit)"
     }
 }
