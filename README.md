@@ -19,19 +19,27 @@ This is an iOS Swift project called "iOS Cards Game" that allows you to play a c
 
 Below is a screenshot of the welcome screen of the game:
 
-<img src="https://github.com/diana-uk/iOS-Cards-Game/assets/68230600/2e72cdc9-aa11-4d7e-a549-0b7e50b5ee72" alt="Image" width="650" />
+<img src="https://github.com/diana-uk/iOS-Cards-Game/assets/68230600/2e72cdc9-aa11-4d7e-a549-0b7e50b5ee72" alt="Welcome Screen" width="650" />
+
+---
 
 Below is the screenshot of the main game:
 
-<img src="https://github.com/diana-uk/iOS-Cards-Game/assets/68230600/7d340c3f-4c29-4ec3-b2dc-7b199765d3db" alt="Image" width="650" />
+<img src="https://github.com/diana-uk/iOS-Cards-Game/assets/68230600/7d340c3f-4c29-4ec3-b2dc-7b199765d3db" alt="Main Game" width="650" />
+
+---
 
 Below is the screenshot of the scores:
 
-<img src="https://github.com/diana-uk/iOS-Cards-Game/assets/68230600/ce4aab11-1772-4306-9c34-125188e898aa" alt="Image" width="650" />
+<img src="https://github.com/diana-uk/iOS-Cards-Game/assets/68230600/ce4aab11-1772-4306-9c34-125188e898aa" alt="Scores" width="650" />
+
+---
 
 Below is the screenshot of the name of the winner:
 
-<img src="https://github.com/diana-uk/iOS-Cards-Game/assets/68230600/c0d81016-74f7-4816-b1f0-ec5e72a8ea82" alt="Image" width="650" />
+<img src="https://github.com/diana-uk/iOS-Cards-Game/assets/68230600/c0d81016-74f7-4816-b1f0-ec5e72a8ea82" alt="Winner Name" width="650" />
+
+Feel free to add more screenshots or adjust the formatting as needed.
 
 
 ## Installation
